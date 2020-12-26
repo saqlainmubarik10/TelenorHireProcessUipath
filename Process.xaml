@@ -1,0 +1,239 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Process" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:String))" />
+    <x:Property Name="in_ProcessName" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1240,824</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualStudio.Services.Common</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText=" " DisplayName="Process" sap:VirtualizedContainerService.HintSize="686,759" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Flowchart sap:VirtualizedContainerService.HintSize="644,636" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+      <Flowchart.Variables>
+        <Variable x:TypeArguments="sd:DataTable" Name="dtwfp" />
+      </Flowchart.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+          <av:Size x:Key="ShapeSize">60,75</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,124.5</av:PointCollection>
+          <x:Double x:Key="Width">610</x:Double>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Flowchart.StartNode>
+        <x:Reference>__ReferenceID4</x:Reference>
+      </Flowchart.StartNode>
+      <FlowStep x:Name="__ReferenceID0">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">200,284.5</av:Point>
+            <av:Size x:Key="ShapeSize">200,51</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">300,335.5 300,364.5</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke DownloadEmail File" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="TelenorHiringProcess\Download_Email.xaml">
+          <ui:InvokeWorkflowFile.Arguments>
+            <InArgument x:TypeArguments="x:String" x:Key="in_EmailFoldername">[in_Config("EmailInputFolder")]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_BotEmail">[in_Config("BotEmail")]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_EmailSubject">[in_Config("EmailSubject")]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_EmailAttDownloadpath">[in_Config("EmailAttDownloadPath")]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_EmailDownloadpath">[in_Config("EmailDownloadPath")]</InArgument>
+          </ui:InvokeWorkflowFile.Arguments>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:InvokeWorkflowFile>
+        <FlowStep.Next>
+          <FlowStep x:Name="__ReferenceID1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <av:Point x:Key="ShapeLocation">200,364.5</av:Point>
+                <av:Size x:Key="ShapeSize">200,51</av:Size>
+                <av:PointCollection x:Key="ConnectorLocation">300,415.5 300,444.02</av:PointCollection>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ReadWFPExcel File" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="TelenorHiringProcess\Read_WFP_Excel.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_weeklyfilesdir">[in_Config("WeeklySharedfilesdir")]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_WFPSheetname">[in_Config("WFPSheetname")]</InArgument>
+                <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtwfp">[dtwfp]</OutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_manager2loc">[in_Config("WFPExcel_Manager2_loc")]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_location2loc">[in_Config("WFPExcel_Location2_loc")]</InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:InvokeWorkflowFile>
+            <FlowStep.Next>
+              <FlowStep x:Name="__ReferenceID3">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <av:Point x:Key="ShapeLocation">200,444.02</av:Point>
+                    <av:Size x:Key="ShapeSize">200,51</av:Size>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Compare_Create temp File" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="TelenorHiringProcess\Compare_CreateTemplate.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_EmailAttDownloadpath">[in_Config("EmailAttDownloadPath")]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_EmailDownloadpath">[in_Config("EmailDownloadPath")]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_outlook_exepath">[in_Config("Outlookexepath")]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_outlookmsgheaderselector" />
+                    <InArgument x:TypeArguments="x:String" x:Key="in_EmailSubject">[in_Config("EmailSubject")]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_RecruiterSheet">[in_Config("RecruiterSheet")]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Officialnumberfilepath">C:\RPA_Bots_Data\HCD_Data\New_Announcement_Automation\OfficialNumbers\Official Numbers format.xlsx</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Officialnumbersheetname">Sheet1</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_WFPfilepath">C:\RPA_Bots_Data\HCD_Data\New_Announcement_Automation\Weeklyfiles\WFP.xlsx</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_WFPfilesheetname">Sheet1</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_PermLIDSfilepath">C:\RPA_Bots_Data\HCD_Data\New_Announcement_Automation\LIDS\Permanent\PermanentLIDs.xlsx</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_PermLIDSsheetname">Sheet1</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_TempLIDSfilepath">C:\RPA_Bots_Data\HCD_Data\New_Announcement_Automation\LIDS\Temporary\TempLIDs.xlsx</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_TempLIDSsheetname">Sheet1</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_ProcessName">[in_ProcessName]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_strTempPath">[in_Config("TempEmployTemplate")]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_strPermanentPath">[in_Config("PermanentEmployTemplate")]</InArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:InvokeWorkflowFile>
+              </FlowStep>
+            </FlowStep.Next>
+          </FlowStep>
+        </FlowStep.Next>
+      </FlowStep>
+      <FlowStep x:Name="__ReferenceID4">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">200,124.5</av:Point>
+            <av:Size x:Key="ShapeSize">200,51</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">300,175.5 300,204.5</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:InvokeCode ContinueOnError="{x:Null}" Code="Array.ForEach(Directory.GetFiles(EmailAttDownloadsdir),Sub(x) File.Delete(x))&#xA;Array.ForEach(Directory.GetFiles(EmailDownloadsdir),Sub(x) File.Delete(x))&#xA;Array.ForEach(Directory.GetFiles(WFPlocal),Sub(x) File.Delete(x))&#xA;Array.ForEach(Directory.GetFiles(Officialnumberslocal),Sub(x) File.Delete(x))&#xA;Array.ForEach(Directory.GetFiles(permLIDSlocal),Sub(x) File.Delete(x))&#xA;Array.ForEach(Directory.GetFiles(TempLIDSlocal),Sub(x) File.Delete(x))" DisplayName="Invoke Empty all directories" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+          <ui:InvokeCode.Arguments>
+            <InArgument x:TypeArguments="x:String" x:Key="EmailAttDownloadsdir">[in_Config("EmailAttDownloadPath")]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="EmailDownloadsdir">[in_Config("EmailDownloadPath")]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="WFPlocal">[in_Config("WeeklySharedfilesLocaldir").Replace(in_Config("WeeklySharedfilesLocaldir").Split("\"c).Last(),"")]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="Officialnumberslocal">[in_Config("Officialnumbersfilelocal").Replace(in_Config("Officialnumbersfilelocal").Split("\"c).Last(),"")]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="permLIDSlocal">[in_Config("PermLIDSnumbersfilelocal").Replace(in_Config("PermLIDSnumbersfilelocal").Split("\"c).Last(),"")]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="TempLIDSlocal">[in_Config("TempLIDSnumbersfilelocal").Replace(in_Config("TempLIDSnumbersfilelocal").Split("\"c).Last(),"")]</InArgument>
+          </ui:InvokeCode.Arguments>
+        </ui:InvokeCode>
+        <FlowStep.Next>
+          <FlowStep x:Name="__ReferenceID2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <av:Point x:Key="ShapeLocation">200,204.5</av:Point>
+                <av:Size x:Key="ShapeSize">200,51</av:Size>
+                <av:PointCollection x:Key="ConnectorLocation">300,255.5 300,284.5</av:PointCollection>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke CopySharedfolder File" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="TelenorHiringProcess\CopySharedFolderFiles.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_OfficialNumbersfileSharedpath">[in_Config("OfficialnumbersfileShared")]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_OfficialNumbersfileLocalpath">[in_Config("Officialnumbersfilelocal")]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_TempLIDSSharedpath">[in_Config("TempLIDSnumbersfileShared")]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_TempLIDSLocalpath">[in_Config("TempLIDSnumbersfilelocal")]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_PermLIDSSharedpath">[in_Config("PermLIDSnumbersfileShared")]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_PermLIDSLocalpath">[in_Config("PermLIDSnumbersfilelocal")]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_WFPSharedpath">[in_Config("WeeklySharedfilesShareddir")]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_WFPLocalpath">[in_Config("WeeklySharedfilesLocaldir")]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_PermLIDSsheetname">[in_Config("PermLIDSnumbersfileSheetname")]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_TempLIDSSheetname">[in_Config("TempLIDSnumbersfileSheetname")]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_OfficialnumberSheetname">[in_Config("OfficialnumbersfileSheetname")]</InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:InvokeWorkflowFile>
+            <FlowStep.Next>
+              <x:Reference>__ReferenceID0</x:Reference>
+            </FlowStep.Next>
+          </FlowStep>
+        </FlowStep.Next>
+      </FlowStep>
+      <x:Reference>__ReferenceID1</x:Reference>
+      <x:Reference>__ReferenceID2</x:Reference>
+      <x:Reference>__ReferenceID3</x:Reference>
+    </Flowchart>
+  </Sequence>
+</Activity>
